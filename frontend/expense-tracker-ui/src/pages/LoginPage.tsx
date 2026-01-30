@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod'; // Import z directly
+import * as z from 'zod'; 
 import { useDispatch, useSelector } from 'react-redux';
-import { login, reset } from '../store/slices/authSlice'; // Adjust based on your slice export
+import { login, reset } from '../store/slices/authSlice';
 import { useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import type { AppDispatch, RootState } from '../store/store';
@@ -31,7 +31,6 @@ const LoginPage = () => {
 
     useEffect(() => {
         if (isError) {
-            // Toast or alert could go here
             console.error(message);
         }
 

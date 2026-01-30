@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getSummary, getTransactions, deleteTransaction, reset } from '../store/slices/transactionSlice';
+import { getSummary, getTransactions, deleteTransaction } from '../store/slices/transactionSlice';
 import SpendingChart from '../components/SpendingChart';
 import TransactionForm from '../components/TransactionForm';
 import { Trash2, TrendingUp, TrendingDown, DollarSign, Plus } from 'lucide-react';
@@ -10,7 +10,7 @@ import Navbar from '../components/Navbar';
 const DashboardPage = () => {
     const dispatch = useDispatch<AppDispatch>();
     const { user } = useSelector((state: RootState) => state.auth);
-    const { summary, transactions, isLoading, isSuccess } = useSelector((state: RootState) => state.transaction);
+    const { summary, transactions, isLoading } = useSelector((state: RootState) => state.transaction);
     const [showForm, setShowForm] = useState(false);
 
     useEffect(() => {

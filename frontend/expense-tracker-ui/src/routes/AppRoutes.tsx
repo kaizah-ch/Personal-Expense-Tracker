@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import type { ReactNode } from 'react';
 import { useSelector } from 'react-redux';
 import type { RootState } from '../store/store';
 import LoginPage from '../pages/LoginPage';
 import RegisterPage from '../pages/RegisterPage';
 import DashboardPage from '../pages/DashboardPage';
-// Placeholder for now
-const Navbar = () => <div>Navbar</div>;
+import Navbar from '../components/Navbar';
 
-const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
+const ProtectedRoute = ({ children }: { children: ReactNode }) => {
     const { user } = useSelector((state: RootState) => state.auth);
     if (!user) {
         return <Navigate to="/login" replace />;
